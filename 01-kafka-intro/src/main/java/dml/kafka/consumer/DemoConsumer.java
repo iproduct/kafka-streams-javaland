@@ -30,9 +30,9 @@ public class DemoConsumer {
     public void run() {
         consumer.subscribe(Collections.singletonList("events"));
 
-        TopicPartition partition = new TopicPartition("events", 0);
-        consumer.assign(List.of(partition));
-        consumer.seek(partition, 0);
+//        TopicPartition partition = new TopicPartition("events", 0);
+//        consumer.assign(List.of(partition));
+//        consumer.seek(partition, 0);
 
         try {
             while (true) {

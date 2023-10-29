@@ -72,7 +72,7 @@ public class KafkaStreamsConfig {
                 .toStream()
                 .map((windowedId, value) -> new KeyValue<>(windowedId.key(), value))
                 .filter((i, s) -> s != null && s.endsWith("{\"type\":\"sweep_end\"}"))
-                .to("minSweepDistance");
+                .to("allSweepDistances");
 
         stream.print(Printed.toSysOut());
 
